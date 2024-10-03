@@ -20,6 +20,14 @@ public class RoundManager : NetworkBehaviour
         // Additional logic for starting a new round
     }
 
+    [ClientRpc]
+    public void RpcUpdateGameState(int newRoundTimer, int newTeamAScore, int newTeamBScore)
+    {
+        roundTimer = newRoundTimer;
+        teamAScore = newTeamAScore;
+        teamBScore = newTeamBScore;
+    }
+
     [Server]
     public void UpdateScores(int teamAScoreChange, int teamBScoreChange)
     {

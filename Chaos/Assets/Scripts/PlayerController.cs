@@ -11,6 +11,11 @@ public class PlayerController : NetworkBehaviour
     public string playerName;
 
     // Other SyncVars for attributes, abilities, etc.
+    [SyncVar]
+    public float movementSpeed;
+
+    [SyncVar]
+    public int attackPower;
 
     // Method to handle taking damage
     public void TakeDamage(int damage)
